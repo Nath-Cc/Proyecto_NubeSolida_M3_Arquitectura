@@ -1,0 +1,87 @@
+LECCIÓN 1
+Introducción a la Computación en la Nube
+
+Proyecto: Nube Sólida
+Arquitectura conceptual – Nathalie Carrasco
+
+🔹 Este documento corresponde a la Lección 1 del Módulo 3 y sienta las bases conceptuales para las decisiones arquitectónicas que se desarrollarán en las siguientes etapas.
+
+1. Introducción
+
+La computación en la nube surge como respuesta a las limitaciones de los modelos tradicionales de infraestructura, donde las organizaciones debían adquirir, mantener y escalar sus propios recursos tecnológicos.
+
+En el contexto actual, las empresas requieren infraestructuras flexibles, escalables y resilientes, capaces de adaptarse rápidamente a cambios en la demanda y a nuevas necesidades del negocio.
+La computación en la nube permite cumplir estos objetivos mediante el uso de recursos bajo demanda, accesibles a través de internet y gestionados por proveedores especializados.
+
+Este proyecto se enmarca en un proceso de migración hacia la nube, con el objetivo de modernizar los servicios existentes y mejorar su disponibilidad y eficiencia.
+
+2. ¿Qué es la computación en la nube?
+
+La computación en la nube es un modelo que permite el acceso a recursos tecnológicos —como servidores, almacenamiento, bases de datos y aplicaciones— a través de internet, sin necesidad de administrar infraestructura física propia.
+
+Estos recursos pueden ser aprovisionados y liberados de manera rápida, según las necesidades del negocio, pagando únicamente por el uso realizado.
+
+Desde el punto de vista arquitectónico, la nube permite diseñar sistemas más dinámicos y adaptables, reduciendo la dependencia del hardware y mejorando la capacidad de respuesta ante cambios.
+
+3. Beneficios principales de la computación en la nube
+Escalabilidad
+
+La nube permite aumentar o reducir recursos de forma automática o manual, adaptándose a la demanda real del sistema sin necesidad de rediseñar la arquitectura.
+
+Reducción de costos
+
+El modelo de pago por uso elimina grandes inversiones iniciales en infraestructura y reduce costos operativos asociados al mantenimiento de hardware.
+
+Alta disponibilidad
+
+Los proveedores cloud ofrecen infraestructuras distribuidas geográficamente, lo que mejora la continuidad del servicio y reduce el impacto de fallos.
+
+Elasticidad
+
+Los recursos pueden ajustarse en tiempo real, permitiendo responder eficientemente a picos de carga o disminuciones en el uso.
+
+Acceso y flexibilidad
+
+Los servicios cloud pueden ser consumidos desde cualquier ubicación, facilitando el trabajo remoto y la integración de equipos distribuidos.
+
+4. Características clave del modelo cloud
+
+Recursos bajo demanda: el usuario solicita solo lo que necesita, cuando lo necesita.
+
+Autoservicio: aprovisionamiento sin intervención manual del proveedor.
+
+Medición del servicio: uso monitoreado y facturado de forma transparente.
+
+Acceso amplio a la red: disponibilidad desde distintos dispositivos.
+
+Pool de recursos compartidos: optimización de infraestructura para múltiples clientes.
+
+Estas características influyen directamente en las decisiones arquitectónicas que se tomarán en etapas posteriores.
+
+5. Modelos de despliegue en la nube
+Nube pública
+
+Los recursos son provistos por un proveedor externo y compartidos entre múltiples organizaciones.
+Es ideal para soluciones escalables, con menor costo inicial y rápida implementación.
+
+Nube privada
+
+La infraestructura es utilizada por una sola organización, ofreciendo mayor control y personalización, aunque con mayores costos operativos.
+
+Nube híbrida
+
+Combina nube pública y privada, permitiendo balancear seguridad, control y flexibilidad según las necesidades del negocio.
+
+6. Relación con el proyecto “Nube Sólida”
+
+Este análisis conceptual sirve como base para:
+
+Seleccionar los modelos de servicio adecuados (Lección 2).
+
+Definir el modelo de implementación más conveniente (Lección 3).
+
+Diseñar una arquitectura cliente-servidor alineada a principios cloud (Lección 4).
+
+Incorporar atributos de calidad como seguridad, resiliencia y escalabilidad (Lección 5).
+
+Las decisiones arquitectónicas futuras estarán directamente fundamentadas en los conceptos desarrollados en esta lección.
