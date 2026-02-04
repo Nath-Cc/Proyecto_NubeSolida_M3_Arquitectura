@@ -1,0 +1,161 @@
+# Lección 2 – Modelos de Servicio en la Nube
+
+## 1. Introducción
+
+Esta lección tiene como objetivo **analizar y seleccionar los modelos de servicio en la nube (IaaS, PaaS, SaaS y FaaS)** más adecuados para cada componente de la arquitectura del sistema de reservas definido en la Lección 1.
+
+
+La solución arquitectónica presentada ha sido diseñada por **Nathalie Carrasco**.
+
+---
+
+## 2. Análisis de los modelos de servicio en la nube
+
+### 2.1 Infrastructure as a Service (IaaS)
+
+El modelo **IaaS** proporciona infraestructura básica como servidores, redes y almacenamiento, permitiendo al equipo de arquitectura un alto nivel de control sobre el sistema operativo y la configuración del entorno.
+
+**Ventajas principales:**
+
+* Mayor control sobre la infraestructura
+* Flexibilidad para definir configuraciones personalizadas
+* Adecuado para cargas que requieren ajustes específicos
+
+**Desventajas:**
+
+* Mayor responsabilidad operativa
+* Requiere gestión de parches, sistema operativo y monitoreo
+
+**Casos de uso comunes:**
+
+* Servicios backend con configuraciones particulares
+* Sistemas que requieren control detallado del entorno
+
+---
+
+### 2.2 Platform as a Service (PaaS)
+
+El modelo **PaaS** abstrae la gestión de la infraestructura y permite a los equipos enfocarse en el desarrollo y despliegue de aplicaciones.
+
+**Ventajas principales:**
+
+* Reducción de la carga operativa
+* Despliegue más rápido
+* Escalabilidad integrada
+
+**Desventajas:**
+
+* Menor control sobre la infraestructura subyacente
+* Dependencia del proveedor
+
+**Casos de uso comunes:**
+
+* Servicios de aplicación
+* APIs y backends web
+
+---
+
+### 2.3 Software as a Service (SaaS)
+
+El modelo **SaaS** entrega aplicaciones completas listas para su uso, sin necesidad de administrar infraestructura ni plataforma.
+
+**Ventajas principales:**
+
+* Mínima gestión técnica
+* Alta disponibilidad incluida
+* Costos predecibles
+
+**Desventajas:**
+
+* Limitada personalización
+* Dependencia total del proveedor
+
+**Casos de uso comunes:**
+
+* Servicios de correo
+* Herramientas de monitoreo o autenticación externa
+
+---
+
+### 2.4 Function as a Service (FaaS)
+
+El modelo **FaaS** permite ejecutar funciones en respuesta a eventos, sin administrar servidores.
+
+**Ventajas principales:**
+
+* Escalabilidad automática
+* Pago por ejecución
+* Ideal para procesos asíncronos
+
+**Desventajas:**
+
+* Limitaciones de tiempo de ejecución
+* No adecuado para procesos persistentes
+
+**Casos de uso comunes:**
+
+* Procesamiento de eventos
+* Tareas específicas desacopladas del flujo principal
+
+---
+
+## 3. Asignación de modelos de servicio a la arquitectura
+
+### 3.1 Frontend Web
+
+**Modelo asignado:** SaaS / PaaS
+
+**Justificación:**
+El frontend se beneficia de un modelo gestionado que permita alta disponibilidad y escalabilidad sin requerir administración de infraestructura. La lógica del sistema no reside en esta capa, por lo que no se requiere control a bajo nivel.
+
+---
+
+### 3.2 API Gateway
+
+**Modelo asignado:** PaaS
+
+**Justificación:**
+El API Gateway actúa como punto de entrada único al backend. Utilizar PaaS permite gestionar el tráfico, aplicar políticas de seguridad y escalar automáticamente sin complejidad operativa.
+
+---
+
+### 3.3 Servicio de Autenticación
+
+**Modelo asignado:** PaaS
+
+**Justificación:**
+Este servicio requiere alta disponibilidad y seguridad. PaaS permite enfocarse en la lógica de autenticación sin administrar servidores, manteniendo un buen equilibrio entre control y simplicidad.
+
+---
+
+### 3.4 Servicio de Reservas
+
+**Modelo asignado:** IaaS / PaaS
+
+**Justificación:**
+Al ser el núcleo del sistema, este servicio puede requerir mayor control o configuraciones específicas. El uso de IaaS o PaaS permite escalar de forma independiente y adaptar recursos según la demanda.
+
+---
+
+### 3.5 Servicio de Recursos
+
+**Modelo asignado:** PaaS
+
+**Justificación:**
+Este servicio mantiene la disponibilidad de los recursos y no requiere configuraciones complejas de infraestructura. PaaS permite una gestión eficiente y escalable.
+
+---
+
+### 3.6 Servicio de Notificaciones
+
+**Modelo asignado:** FaaS / SaaS
+
+**Justificación:**
+Las notificaciones se ejecutan de forma asíncrona y orientada a eventos. FaaS permite ejecutar estas tareas solo cuando es necesario, reduciendo costos y desacoplando el sistema principal.
+
+---
+
+## 4. Conclusión
+
+La selección de los modelos de servicio se realizó considerando el **nivel de control necesario, la flexibilidad operativa y la simplicidad de gestión**, manteniendo coherencia con la arquitectura cliente-servidor definida en la Lección 1.
+
