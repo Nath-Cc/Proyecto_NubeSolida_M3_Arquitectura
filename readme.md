@@ -1,48 +1,138 @@
-# Proyecto "Nube Solida"
-## Lección 1 – Contexto y definición del problema
+# Proyecto Nube Sólida  
+## Diseño Arquitectónico de una Solución Cloud
 
-### 1.1 Contexto del proyecto
-
-El presente proyecto corresponde al diseño de una **solución arquitectónica para un sistema de reservas**, orientado a su consumo a través de una aplicación web.
-
-En escenarios reales, los sistemas de reservas suelen manejar información sensible, como datos de usuarios, disponibilidad y registros de operaciones. Por esta razón, es fundamental que la arquitectura propuesta considere desde su diseño aspectos como **seguridad, escalabilidad y separación de responsabilidades**.
-
-Este proyecto no se centra únicamente en la implementación visual, sino en la **definición correcta de la arquitectura**, priorizando buenas prácticas utilizadas en entornos profesionales y en infraestructuras modernas.
-
-La solución presentada ha sido diseñada por **Nathalie Carrasco**, aplicando principios básicos de arquitectura cliente-servidor y buenas prácticas de diseño de sistemas.
+**Autora:** Nathalie C.  
+**Módulo:** Fundamentos de la Arquitectura Cloud Modulo N3
 
 ---
 
-### 1.2 Problema a resolver
+## Resumen general del proyecto
 
-Un error común en aplicaciones web básicas es permitir que el cliente (frontend) se comunique directamente con la base de datos. Este enfoque genera múltiples riesgos, tales como:
+El proyecto **Nube Sólida** presenta el diseño conceptual de una arquitectura en la nube para un sistema de reservas, desarrollado desde una **perspectiva arquitectónica** y alineado con buenas prácticas de la computación cloud.
 
-- Exposición directa de la base de datos
-- Falta de control sobre las consultas
-- Mayor superficie de ataque
-- Dificultad para escalar o mantener el sistema
+La solución responde a un escenario realista de modernización tecnológica, donde una organización requiere mejorar la **escalabilidad, resiliencia y seguridad** de sus aplicaciones, evitando arquitecturas monolíticas rígidas o accesos inseguros a los datos.
 
-El problema principal que se busca resolver es **cómo permitir que un usuario realice reservas sin comprometer la seguridad ni la integridad de los datos**, manteniendo una estructura clara y mantenible.
+A lo largo del proyecto se analizan y justifican decisiones clave relacionadas con:
+- El modelo cliente-servidor
+- Los modelos de servicio en la nube
+- El modelo de implementación
+- Los principios de diseño arquitectónico
+- Los atributos de calidad fundamentales
 
----
-
-### 1.3 Objetivo general
-
-Diseñar una arquitectura de sistema de reservas que permita la interacción segura entre el cliente y los datos, evitando accesos directos a la base de datos y utilizando una capa intermedia que gestione la lógica del sistema.
+El foco no está puesto en la implementación de código, sino en la **correcta definición de la arquitectura**, su coherencia técnica y su alineación con entornos cloud modernos.
 
 ---
 
-### 1.4 Objetivos específicos
+## Contexto del problema
 
-- Separar claramente las responsabilidades entre cliente, lógica de negocio y almacenamiento de datos.
-- Reducir los riesgos de seguridad asociados al acceso directo a la base de datos.
-- Facilitar la escalabilidad y el mantenimiento del sistema.
-- Aplicar un enfoque arquitectónico alineado con buenas prácticas utilizadas en entornos cloud.
+En sistemas de reservas reales se manejan datos sensibles, alta concurrencia de usuarios y variaciones importantes de carga.  
+Una mala decisión arquitectónica —como permitir el acceso directo del cliente a la base de datos— puede derivar en:
+
+- Riesgos de seguridad
+- Dificultad para escalar
+- Problemas de mantenimiento
+- Baja resiliencia ante fallos
+
+El desafío principal consiste en **diseñar una arquitectura que permita a los usuarios interactuar con el sistema de forma segura, controlada y escalable**, preparada para operar en la nube.
 
 ---
 
-### 1.5 Alcance de la solución
+## Enfoque de la solución
 
-Esta lección se enfoca en la **definición del contexto y el problema**, estableciendo las bases conceptuales necesarias para comprender la arquitectura propuesta.
+La solución propuesta se basa en una **arquitectura cliente-servidor**, evolucionada hacia un enfoque moderno preparado para microservicios y despliegue cloud.
 
-En las siguientes lecciones se desarrollará el diseño arquitectónico, el análisis de componentes y la justificación de las decisiones técnicas adoptadas.
+Los principios que guían el diseño son:
+- Separación de responsabilidades
+- Desacoplamiento entre componentes
+- Escalabilidad bajo demanda
+- Seguridad desde el diseño
+- Resiliencia ante fallos
+
+Cada decisión arquitectónica está documentada y justificada a lo largo de las distintas lecciones que componen el proyecto.
+
+---
+
+## Diagrama conceptual de la solución
+
+El siguiente diagrama representa la arquitectura general del sistema y sirve como base para todas las decisiones analizadas en el proyecto:
+
+![Diagrama conceptual de la arquitectura](./diagrama_l2.png)
+
+Este esquema muestra la separación entre:
+- Capa de cliente
+- Capa de servicios
+- Capa de datos  
+así como los flujos controlados de comunicación entre ellas.
+
+---
+
+## Estructura del proyecto
+
+El repositorio se encuentra organizado de la siguiente manera:
+
+- `readme.md` – Documento integrador del proyecto  
+- `diagrama.html` – Representación visual de la arquitectura  
+- `diagrama_l2.png` – Diagrama conceptual de la solución  
+- `LeccionN1.doc` – Fundamentos de la computación en la nube  
+- `LeccionN2.doc` – Modelos de servicio en la nube  
+- `LeccionN3.doc` – Modelos de implementación  
+- `LeccionN4.doc` – Principios de diseño arquitectónico  
+- `LeccionN5.doc` – Atributos de calidad  
+
+---
+
+## Desarrollo por lecciones
+
+### Lección 1 – Contexto y fundamentos de la computación en la nube  
+📄 Documento: [LeccionN1.doc](./LeccionN1.doc)
+
+En esta lección se establece el contexto del problema y se introducen los fundamentos de la computación en la nube, sus beneficios y características principales.  
+Este análisis permite comprender por qué la nube es el entorno adecuado para la solución propuesta.
+
+---
+
+### Lección 2 – Modelos de servicio en la nube  
+📄 Documento: [LeccionN2.doc](./LeccionN2.doc)
+
+Se analizan los modelos IaaS, PaaS, SaaS y FaaS, asignando el modelo más adecuado a cada componente de la arquitectura cliente-servidor.  
+Cada decisión se justifica considerando el nivel de control, flexibilidad y responsabilidad requerido.
+
+---
+
+### Lección 3 – Modelos de implementación en la nube  
+📄 Documento: [LeccionN3.doc](./LeccionN3.doc)
+
+En esta etapa se comparan los modelos de implementación (nube pública, privada e híbrida) y se selecciona el más adecuado para la solución.  
+La decisión se fundamenta en aspectos de seguridad, costos, flexibilidad y necesidades del negocio.
+
+---
+
+### Lección 4 – Principios de diseño arquitectónico  
+📄 Documento: [LeccionN4.doc](./LeccionN4.doc)
+
+Se aplican principios fundamentales como modularidad, desacoplamiento, elasticidad y resiliencia.  
+Esta lección consolida todas las decisiones previas en un diseño estructurado de arquitectura cliente-servidor preparado para entornos cloud.
+
+---
+
+### Lección 5 – Atributos de calidad  
+📄 Documento: [LeccionN5.doc](./LeccionN5.doc)
+
+Se detallan las estrategias arquitectónicas adoptadas para garantizar:
+- Seguridad de la información
+- Resiliencia ante fallos
+- Escalabilidad frente a picos de demanda  
+
+Estos atributos se integran de forma transversal en toda la arquitectura.
+
+---
+
+## Conclusión general
+
+El proyecto **Nube Sólida** presenta una solución arquitectónica coherente, escalable y segura, alineada con los fundamentos de la computación en la nube y con prácticas utilizadas en entornos profesionales.
+
+La arquitectura propuesta no solo resuelve el problema planteado, sino que queda preparada para evolucionar, adaptarse a nuevas cargas y ser desplegada sobre plataformas cloud modernas.
+
+Este trabajo demuestra criterio en la toma de decisiones arquitectónicas y una comprensión sólida de los principios que rigen el diseño de soluciones cloud robustas.
+
+---
