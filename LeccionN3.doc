@@ -1,0 +1,159 @@
+Lección 3 – Modelos de Implementación en la Nube
+
+Proyecto: Nube Sólida
+Presentado por: Nathalie Carrasco
+
+1. Introducción
+
+En esta lección se define el modelo de implementación en la nube más adecuado para la arquitectura del sistema de reservas, tomando como base los componentes y modelos de servicio seleccionados en la Lección 2.
+
+El análisis se realiza considerando los factores clave solicitados: seguridad, flexibilidad, costos y requisitos del negocio, manteniendo coherencia con una arquitectura basada en el modelo cliente-servidor y orientada a microservicios.
+
+2. Análisis de los modelos de implementación
+2.1 Nube Pública
+
+En la nube pública, los servicios y la infraestructura son provistos por un proveedor cloud externo y compartidos entre múltiples clientes.
+
+Ventajas:
+
+Alta escalabilidad y elasticidad
+
+Reducción de costos iniciales
+
+Pago por uso
+
+Amplio catálogo de servicios gestionados
+
+Desventajas:
+
+Menor control físico sobre la infraestructura
+
+Dependencia del proveedor
+
+Casos de uso típicos:
+
+Aplicaciones web modernas
+
+Sistemas con demanda variable
+
+Proyectos que priorizan agilidad y time-to-market
+
+2.2 Nube Privada
+
+La nube privada es una infraestructura dedicada a una sola organización, ya sea on-premise o gestionada por un proveedor.
+
+Ventajas:
+
+Mayor control y personalización
+
+Cumplimiento de requisitos regulatorios estrictos
+
+Aislamiento total de recursos
+
+Desventajas:
+
+Costos elevados de implementación y mantenimiento
+
+Menor elasticidad frente a picos de demanda
+
+Mayor carga operativa
+
+Casos de uso típicos:
+
+Organizaciones con normativas muy restrictivas
+
+Sistemas legacy críticos
+
+Entornos con alta sensibilidad de datos
+
+2.3 Nube Híbrida
+
+La nube híbrida combina nube pública y privada, permitiendo distribuir cargas según su criticidad o sensibilidad.
+
+Ventajas:
+
+Balance entre control y escalabilidad
+
+Flexibilidad para mover cargas
+
+Mejor aprovechamiento de recursos existentes
+
+Desventajas:
+
+Mayor complejidad arquitectónica
+
+Costos de integración y operación
+
+Gestión más compleja
+
+Casos de uso típicos:
+
+Migraciones progresivas
+
+Integración con sistemas on-premise
+
+Escenarios con requerimientos mixtos
+
+3. Modelo de implementación seleccionado
+Modelo elegido: Nube Pública
+
+Para el sistema de reservas propuesto, se selecciona un modelo de implementación en nube pública.
+
+Esta decisión se alinea con los objetivos del proyecto y con los modelos de servicio definidos en la Lección 2 (PaaS, SaaS y FaaS principalmente).
+
+4. Justificación de la decisión
+4.1 Seguridad
+
+La nube pública permite implementar altos estándares de seguridad mediante:
+
+Autenticación centralizada
+
+Cifrado de datos en tránsito y en reposo
+
+Aislamiento lógico de servicios
+
+Servicios gestionados con certificaciones de seguridad
+
+Desde la arquitectura, la seguridad se refuerza mediante el uso de API Gateway, microservicios desacoplados y bases de datos independientes.
+
+4.2 Flexibilidad
+
+El modelo de nube pública ofrece:
+
+Escalabilidad automática
+
+Facilidad para agregar nuevos servicios
+
+Adaptación rápida a cambios del negocio
+
+Esto es clave para un sistema de reservas expuesto a picos de demanda y evolución constante.
+
+4.3 Costos
+
+El esquema de pago por uso permite:
+
+Evitar grandes inversiones iniciales
+
+Ajustar costos según la demanda real
+
+Optimizar recursos en servicios no críticos mediante FaaS y SaaS
+
+Este enfoque resulta más eficiente para el contexto del proyecto.
+
+4.4 Requisitos del negocio
+
+El negocio requiere:
+
+Alta disponibilidad
+
+Rápido despliegue
+
+Capacidad de crecimiento
+
+La nube pública responde de forma directa a estas necesidades sin introducir complejidad innecesaria.
+
+5. Conclusión
+
+La elección del modelo de nube pública proporciona el equilibrio adecuado entre seguridad, escalabilidad, flexibilidad y costos, manteniendo una arquitectura moderna, desacoplada y preparada para el crecimiento.
+
+Esta decisión consolida las bases del diseño arquitectónico y habilita la aplicación efectiva de los principios de diseño y atributos de calidad que serán desarrollados en las siguientes lecciones.
