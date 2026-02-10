@@ -1,0 +1,117 @@
+Lección 4 – Principios de diseño arquitectónico
+
+Aplicar principios fundamentales de diseño para consolidar una arquitectura modular, resiliente, elástica y segura, integrando los modelos de servicio (Lección 2) y el modelo de implementación en nube pública (Lección 3).
+
+1. Aplicación de principios de diseño arquitectónico
+1.1 Modularidad
+
+La arquitectura se diseña en módulos independientes, representados por microservicios con responsabilidades claramente definidas (Autenticación, Reservas, Recursos y Notificaciones).
+
+Decisiones clave:
+
+Cada servicio posee su propia base de datos.
+
+Los cambios en un módulo no afectan directamente a los demás.
+
+Beneficio: Facilita el mantenimiento, la evolución del sistema y el trabajo colaborativo entre equipos.
+
+1.2 Desacoplamiento
+
+El desacoplamiento se logra mediante:
+
+Comunicación controlada a través del API Gateway.
+
+Eliminación de dependencias directas entre microservicios.
+
+Decisiones clave:
+
+El frontend no accede directamente a los servicios ni a las bases de datos.
+
+Los servicios pueden evolucionar o escalar sin romper contratos existentes.
+
+Beneficio: Reduce el impacto de fallos y permite cambios tecnológicos sin rediseñar toda la solución.
+
+1.3 Elasticidad
+
+La solución aprovecha las capacidades de la nube pública y los modelos PaaS y FaaS para adaptarse dinámicamente a la demanda.
+
+Decisiones clave:
+
+Escalado automático de microservicios críticos (Reservas y Auth).
+
+Uso de servicios gestionados que permiten crecimiento bajo demanda.
+
+Beneficio: El sistema responde eficientemente a picos de tráfico sin sobredimensionar recursos.
+
+1.4 Resiliencia
+
+La arquitectura está diseñada para tolerar fallos sin comprometer la disponibilidad general del sistema.
+
+Decisiones clave:
+
+Aislamiento de fallos por servicio.
+
+Manejo asíncrono de notificaciones.
+
+Preparación para reinicios automáticos y balanceo de carga.
+
+Beneficio: Mejora la continuidad del negocio y la experiencia del usuario ante incidentes parciales.
+
+2. Esquema conceptual de la arquitectura cliente-servidor
+
+Desde un enfoque cliente-servidor moderno:
+
+Cliente: Frontend Web ejecutado como servicio gestionado.
+
+Servidor: Backend distribuido en microservicios desplegados en nube pública.
+
+Integración con decisiones previas
+
+Modelos de servicio:
+
+Frontend: SaaS / Hosting gestionado
+
+Microservicios: PaaS
+
+Notificaciones: FaaS / SaaS
+
+Bases de datos: PaaS gestionado
+
+Modelo de implementación:
+
+Nube pública, aprovechando escalabilidad y servicios administrados.
+
+Este esquema permite mantener la simplicidad del modelo cliente-servidor, incorporando prácticas modernas de arquitectura cloud.
+
+3. Documentación de decisiones arquitectónicas
+Decisión 1: Uso de microservicios
+
+Se eligió microservicios para evitar una arquitectura monolítica rígida y permitir escalado selectivo.
+
+Decisión 2: API Gateway como punto único de entrada
+
+Centraliza seguridad, control de tráfico y simplifica la exposición del backend.
+
+Decisión 3: Bases de datos por servicio
+
+Garantiza independencia, reduce acoplamiento y mejora la seguridad.
+
+Decisión 4: Servicios gestionados en nube pública
+
+Reduce carga operativa, costos de mantenimiento y acelera el despliegue.
+
+Conclusión de la Lección 4
+
+Esta lección consolida las decisiones tomadas en las etapas anteriores en un diseño arquitectónico coherente y estructurado, alineado con buenas prácticas de la industria.
+
+La arquitectura resultante es:
+
+Modular y desacoplada
+
+Elástica y resiliente
+
+Segura desde el diseño
+
+Preparada para crecimiento y cambios futuros
+
+Este diseño demuestra un enfoque arquitectónico de nivel semi senior, orientado no solo a resolver el problema actual, sino a sostener la solución en el tiempo
